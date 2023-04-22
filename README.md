@@ -2,6 +2,47 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Notes du projet
+
+Pour réaliser ce projet test, je me suis appuyé sur cette [vidéo Youtube de Ben BK](https://www.youtube.com/watch?v=poyVa6yd4X8&list=PLBV4f2pTYexqgdiVpLOWlF-E5sTLPimot&index=35).  
+
+### Stack technique
+ - [Node.js](https://nodejs.org/en)
+ - [React.js](https://reactjs.org/)
+ - [ethers.js](https://docs.ethers.org/v3/) => alternative à [web3.js](https://web3js.readthedocs.io/en/v1.8.2/)
+ - [Hardhat](https://hardhat.org/docs) => alternative à [Truffle](https://trufflesuite.com/)
+ - [VS Code](https://code.visualstudio.com/)
+ - [Metamask](https://metamask.io/)
+
+### Etapes
+- Initialisation du projet React
+```bash
+npx create-react-app react-blockchain-app
+```
+- Installation des librairies
+```bash
+npm install ethers hardhat @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers
+npm install --save-dev "hardhat@^2.14.0" "@nomicfoundation/hardhat-toolbox@^2.0.0"
+```
+- Initialisation Hardhat
+```bash
+npx hardhat
+```
+- Compilation du Smart Contract (Hardhat en fournit un par défaut)
+```bash
+npx hardhat compile
+```
+- Mise en place d'un noeud fourni par Hardhat avec 20 adresses et clés privées pour réaliser les tests
+```bash
+npx hardhat node
+```
+- Déploiement du Smart Contract sur le noeud précédemment créé
+```bash
+npx hardhat run .\scripts\deploy.js --network localhost
+```  
+
+_A venir : metamask_
+
 ## Available Scripts
 
 In the project directory, you can run:
