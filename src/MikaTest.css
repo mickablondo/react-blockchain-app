@@ -1,3 +1,17 @@
 .avatar {
-    border-radius: 50%;
-  }
+  border-radius: 50%;
+}
+
+.alignement {
+  display: flex;
+}
+
+.one,
+.two,
+.three{
+  display: inline-block;
+}
+
+.two {
+  flex: 1;
+}

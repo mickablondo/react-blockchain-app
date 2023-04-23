@@ -9,10 +9,13 @@ const user = {
 function MikaTest() {
     return (
         <>
-            <table>
-                <tr>
-                    <td><h1>Hello world, welcome to {user.name}'s home !</h1></td>
-                    <td>
+            <div class="alignement">
+                <div class="one">
+                    <h1>Hello world, welcome to {user.name}'s home !</h1>
+                </div>
+                <div class="two"></div>
+                <div class="three">
+                    <a href="https://babel.coop" target="_blank" rel="noopener noreferrer">
                         <img
                             className="avatar"
                             src={user.imageUrl}
@@ -22,9 +25,9 @@ function MikaTest() {
                             height: user.imageSize
                             }}
                         />
-                    </td>
-                </tr>
-            </table>
+                    </a>
+                </div>
+            </div>
         </>
     )
 }
