@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import MikaTest from './MikaTest';
 import ListerCompetences from './CV';
+import Currencies from './TestApi';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -11,6 +12,7 @@ root.render(
   <React.StrictMode>
     <MikaTest />
     <ListerCompetences />
+    <Currencies />
     <App />
   </React.StrictMode>
 );
