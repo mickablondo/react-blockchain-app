@@ -1,23 +1,31 @@
-export default function Currencies() {
-    console.log(CallApi())
-    return (CallApi());
+import { useState, useEffect } from 'react';
+
+function Currencies() {
+    const API_URL = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json';
+    const [options, setOptions] = useState([]);
+
+    useEffect(() => {
+        const fetchOptions = async () => {
+            try {
+                const response = await fetch(`${API_URL}`);
+                const data = await response.json();
+                console.log(data);
+                setOptions(data);
+            } catch(err) {
+                console.log(err.message);
+            }
+        }
+
+        fetchOptions();
+    }, []);
+
+    return (
+        <select>
+            {Object.entries(options).map(([key, value]) => (
+              <option key={key}>{value}</option>
+            ))}
+        </select>
+    );
 }
 
-function CallApi() {
-    /*return fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json')
-        .then((res) => res.json())
-        .then((data) => {
-            let options;
-            for (var key in data)
-            {
-                options = options.concat('<option key="').concat(key).concat('">').concat(data[key]).concat('</option>');
-            }
-            
-            return (options);
-        })
-        .catch((err) => {
-            console.log(err.message);
-        });
-        */
-       return 'snif';
-}
+export default Currencies;
