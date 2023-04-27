@@ -7,12 +7,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Pour réaliser ce projet test, je me suis appuyé sur cette [vidéo Youtube de Ben BK](https://www.youtube.com/watch?v=poyVa6yd4X8&list=PLBV4f2pTYexqgdiVpLOWlF-E5sTLPimot&index=35).  
 
 ### Stack technique
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Solidity](https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white)
+  
  - [Node.js](https://nodejs.org/en)
  - [React.js](https://reactjs.org/)
  - [ethers.js](https://docs.ethers.org/v3/) => alternative à [web3.js](https://web3js.readthedocs.io/en/v1.8.2/)
  - [Hardhat](https://hardhat.org/docs) => alternative à [Truffle](https://trufflesuite.com/)
  - [VS Code](https://code.visualstudio.com/)
  - [Metamask](https://metamask.io/)
+ - [Solidity](https://docs.soliditylang.org)
 
 ### Etapes
 - Initialisation du projet React
