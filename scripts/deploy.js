@@ -22,6 +22,14 @@ async function main() {
       lockedAmount
     )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
   );
+
+  await lock.deployed();
+
+  // déploiement du smart contract perso : HelloWorld
+  const HelloWorld = await hre.ethers.getContractFactory("HelloWorld");
+  const helloWorld = await HelloWorld.deploy("Hello moi !");
+  await helloWorld.deployed;
+  console.log("HelloWorld is deployed to : ", helloWorld.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

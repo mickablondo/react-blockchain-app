@@ -6,11 +6,13 @@ import MikaTest from './MikaTest';
 import ListerCompetences from './CV';
 import Currencies from './TestApi';
 import reportWebVitals from './reportWebVitals';
+import TestSmartContract from './TestSmartContrat';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <MikaTest />
+    <TestSmartContract />
     <ListerCompetences />
     <Currencies />
     <App />

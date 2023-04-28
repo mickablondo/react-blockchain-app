@@ -41,7 +41,13 @@ npx hardhat node
 npx hardhat run .\scripts\deploy.js --network localhost
 ```  
 
-_A venir : metamask_
+_A décrire : metamask => install extension / connexion localhost / import compte depuis clé privée_
+
+- Let's go démarrer l'appli
+```bash
+npm start
+```  
+
 
 ## Available Scripts
 
