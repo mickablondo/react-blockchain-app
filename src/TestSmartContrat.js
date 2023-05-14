@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import HelloWorld from './artifacts/contracts/HelloWorld.sol/HelloWorld.json'; // ABI pour interagir avec le smart contract
 
-const smAddress = '0x3Aa5ebB10DC797CAC828524e59A333d0A371443c'; // récupéré de la commande : npx hardhat run scripts/deploy.js --network localhost
+const smAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'; // récupéré de la commande : npx hardhat run scripts/deploy.js --network localhost
 
 function TestSmartContract() {
-    const [message, setMessageValue] = useState();
+    // utilisation du hook state pour que les changements puisse être pris en compte dans le DOM
+    const [messageValue, setMessageValue] = useState();
 
+    // utilisation du hook effect pour exécuter du code après la mise à jour du DOM
     useEffect(() => {
         getMessage();
     }, [])
@@ -29,13 +31,13 @@ function TestSmartContract() {
     }
 
     async function setMessage() {
-        if(!message) return
+        if(!messageValue) return
         if(typeof window.ethereum !== 'undefined') { // vérifier que metamask est connecté au frontend
             await requestAccount(); // on attend que l'utilisateur utilise son compte sur le site
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner(); // signer les transactions
             const contract = new ethers.Contract(smAddress, HelloWorld.abi, signer);
-            const transaction = await contract.setMessage(message);
+            const transaction = await contract.setMessage(messageValue);
             setMessageValue('');
             await transaction.wait();
             getMessage();
@@ -44,7 +46,7 @@ function TestSmartContract() {
 
     return (
         <div className="SmartContract">
-            <p>{message}</p>
+            <p>{messageValue}</p>
             <input onChange={e => setMessageValue(e.target.value)} placeholder="Set Message" />
             <button onClick={setMessage}>Set Message to blockchain</button>
         </div>
